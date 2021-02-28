@@ -199,6 +199,20 @@ function InsertionSort() {
 //selection sort
 
 async function selectionSort(arr){
+  for (let i = 0; i < arr.length-1; i++) 
+        { 
+            // Find the minimum element in unsorted array 
+            let min_idx = i; 
+        for (let j = i+1; j < arr.length; j++){ 
+                if (arr[j] < arr[min_idx]) {
+                    min_idx = j;
+                    bool[min_idx]=1;
+                }
+            }
+             bool[min_idx]=0;
+             bool[i]=1;
+             await swap(arr,min_idx,i);
+        } 
   
 }
 function SelectionSort() {
