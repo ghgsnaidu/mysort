@@ -54,6 +54,7 @@ function setup() {
   QSB.mousePressed(QuickSort);
   BSB.mousePressed(BubbleSort);
   ISB.mousePressed(InsertionSort);
+  SSB.mousePressed(SelectionSort);
 }
 
 function draw() {
@@ -109,7 +110,7 @@ async function findpivot(arr, start, end) {
   return pivot;
 }
 
-function QuickSort() {
+async function QuickSort() {
 
   if (running == -1) {
     running = 1;
@@ -120,7 +121,7 @@ function QuickSort() {
     r=255;
     g=255;
     b=255;
-    quickSort(arr, 0, arr.length - 1);
+   await quickSort(arr, 0, arr.length - 1);
     running = -1;
   }
 
@@ -141,7 +142,7 @@ async function bubbleSort(arr) {
   }
 }
 
-function BubbleSort() {
+async function BubbleSort() {
   if (running == -1) {
     running = 1;
     for (let i = 0; i < arr.length; i++) {
@@ -151,7 +152,7 @@ function BubbleSort() {
     r=0;
     b=155;
     g=250;
-    bubbleSort(arr);
+    await bubbleSort(arr);
     running = -1;
   }
 }
@@ -180,7 +181,7 @@ async function insertionSort(arr) {
        
 }
 
-function InsertionSort() {
+async function InsertionSort() {
   if (running == -1) {
     running = 1;
     for (let i = 0; i < arr.length; i++) {
@@ -190,7 +191,7 @@ function InsertionSort() {
     r=70;
     g=210;
     b=205;
-    insertionSort(arr);
+    await insertionSort(arr);
     running = -1;
   }
 
@@ -215,7 +216,7 @@ async function selectionSort(arr){
         } 
   
 }
-function SelectionSort() {
+async function SelectionSort() {
   if (running == -1) {
     running = 1;
     for (let i = 0; i < arr.length; i++) {
@@ -225,7 +226,7 @@ function SelectionSort() {
     r=150;
     g=0;
     b=0;
-    selectionSort(arr, 0, arr.length - 1);
+    await selectionSort(arr, 0, arr.length - 1);
     running = -1;
   }
 
